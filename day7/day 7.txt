@@ -1,0 +1,19 @@
+Algoritma adalah suatu metode step by step buat menyelesaikan suatu masalah.
+
+Ada 2 opsi buat menyusun alur berpikir algoritma
+Flowchart = Yaitu alur berpikir yang direpresentasikan lewat diagram alur yang pakai berbagai simbol.
+Pseudocode = Yaitu alur berpikir yang direpresentasikan pakai teks atau kata-kata.
+
+Kelebihan Flowchart :
+- Flowchart mampu buat menyajikan control flow algoritma secara visual. Jadi, kita lebih gampang buat ngerti alur penyelesaian suatu masalah atau kondisi.
+- Flowchart mampu buat menyajikan control flow algoritma secara visual. Jadi, kita lebih gampang buat ngerti alur penyelesaian suatu masalah atau kondisi.
+
+kekurangan Flowchart :
+- Pengerjaannya memakan waktu alias lama banget.
+- Kalau pakai tools khusus buat bikin flowchart, itu malah berpotensi buat menghambat pemahaman kita tentang algoritma.
+
+Tujuannya pakai Pseudocode :
+- Memahami masalah: Pseudocode membantu kita memahami masalah yang akan diselesaikan sebelum memulai implementasi nyata.
+- Perencanaan: Pseudocode memungkinkan kita untuk merencanakan algoritma secara lebih sistematis sebelum mengkodekannya.
+- Kolaborasi: Pseudocode dapat digunakan untuk berkomunikasi dengan rekan tim atau programmer lainnya tanpa terikat pada sintaksis bahasa pemrograman tertentu.
+- Kolaborasi: Pseudocode dapat digunakan untuk berkomunikasi dengan rekan tim atau programmer lainnya tanpa terikat pada sintaksis bahasa pemrograman tertentu.

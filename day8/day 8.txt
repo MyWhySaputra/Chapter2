@@ -1,0 +1,18 @@
+Try and Catch
+try Statement 👉 memungkinkan kita untuk mendefinisikan blok kode yang akan diuji untuk kesalahan saat sedang dieksekusi.
+catch Statement 👉 memungkinkan kita untuk mendefinisikan blok kode yang akan dieksekusi jika terjadi kesalahan di dalam blok try.
+
+EvalError = Terjadi kesalahan dalam fungsi eval()
+RangeError = Terjadi kesalahan "out of range" pada angka
+ReferenceError = Terjadi referensi ilegal
+SyntaxError = Terjadi kesalahan sintaks
+TypeError = Terjadi kesalahan tipe
+URIError = Terjadi kesalahan dalam fungsi encodeURI()
+
+Berbagai cara menciptakan error
+Menciptakan error dengan throw new Error (disarankan memakai ini)
+Menciptakan error dengan throw Error (sama aja dengan throw new error)
+Menciptakan error dengan throw (tidak disarankan karena tidak ada indek di nomor berapa)
+
+super(param) = untuk melempar param di construktor tang berbeda class
+instanceof = untuk memanggil class dan menyamakan isinya

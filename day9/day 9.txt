@@ -1,0 +1,25 @@
+readFile = untuk membaca file asynchronous
+raadFileSync = untuk membaca file synchronous
+
+setTimeout ini butuh dua parameter biar bisa berjalan.
+● Parameter pertama adalah callback, yaitu aksi yang mau kita jalankan setelah delay-nya selesai.
+● Sedangkan parameter kedua berupa number yang merepresentasikan milliseconds atau berapa lama delay-nya.
+
+setInterval mirip dengan setTimeout, tapi setInterval ini bakal berjalan berulang kali berdasarkan interval-nya.
+
+asynchronous process yang merupakan sebuah proses yang di-assign ke suatu thread tanpa menunggu proses tersebut selesai dijalankan. Pengeksekusian proses tersebut diserahkan sepenuhnya ke core dari processor, tapi thread-nya nggak nunggu proses tersebut selesai.
+
+jadi asynchronous proses adalah sebuah proses eksekusi kode dengan mengutamakan proses tercepat tanpa menunggu proses pertama selesai dijalankan.
+
+Race condition terjadi pas ada satu perintah yang bergantung di output eksekusi asynchronous sebelumnya. Dengan kata lain terjadi kondisi kejar-kejaran.
+
+3 kemungkinan kondisi atau state ini, yaitu:
+● Pending (sedang dalam proses)
+● Fulfilled atau resolved (terpenuhi atau sukses)
+● Rejected (gagal terpenuhi)
+
+Jadi, promise itu sebenarnya cuma suatu object di dalam JavaScript (ES6). Object ini maksudnya bakal merepresentasikan beberapa state tersebut.
+
+Buat mendefinisikan sebuah promise, kita bisa pakai operator new diikuti dengan nama class yaitu Promise.
+
+asyc-await untuk merubah asyc menjadi sycro

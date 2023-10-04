@@ -1,0 +1,35 @@
+OOP adalah jenis paradigma pemrograman yang common dipakai di JavaScript karena gaya penulisannya yang berorientasi objek.
+
+Inheritance, Encapsulation, Abstraction, dan Polymorphism.
+
+Inheritance itu semacam konsep pewarisan yang kita terapkan di OOP.
+
+Ciri ciri :
+
+Super class atau Parent class
+Class yang semua fiturnya diwariskan pada class turunannya.
+Sub-class atau Child class
+Class turunan yang mewarisi semua fitur dari class lain. Sub-class bisa menambah field dan method-nya sendiri sebagai tambahan dari class yang memberikan warisan.
+Reusability
+Pas kita mau bikin class baru dan udah ada class yang berisi kode yang kita mau, kita bisa kok menurunkan class baru itu dari class yang udah ada. Jadi, kita pakai lagi fitur dari class yang udah ada, misalnya method.
+
+Overriding method = Overriding method artinya mengesampingkan atau mengabaikan.
+Overloading method = Overloading method ini sama kayak overriding method, tapi di dalam overload ini, kita mengubah definisi parameter dari super class. Maksudnya, nama method yang kita pakai sama dengan nama method di superclass-nya, tapi parameter yang ada di subclass-nya berbeda.
+
+Incapsulation = Method atau variable pakai visibility yang private supaya class lain nggak bisa akses variable atau method di dalam class tersebut.
+
+Encapsulation itu ibaratnya kayak kapsul. Jadi, data kita bisa disembunyikan dengan suatu cara yang namanya visibility. visibility itu ada 3 macam ya, public, private, dan protected.
+
+# = private (tidak bisa dipanggil di sub classnya)
+_ = protected (bisa dipanggil di sub classnya
+
+Encapsulation bisa meminimalisir terjadinya bug karena kita secara eksplisit bilang bahwa method/ property ini nggak boleh dipanggil di luar kelas deklarasi.
+
+Kelebihan encapsulation
+● Meningkatkan keamanan data.
+● Lebih mudah mengontrol attribute dan method.
+● Class bisa kita buat read-only atau write-only.
+● Fleksibel, maksudnya programmer bisa ganti sebagian dari kode tanpa harus takut berdampak pada kode yang lain.
+
+
+
