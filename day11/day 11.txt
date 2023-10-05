@@ -6,16 +6,16 @@ Git bakal menyimpan folder atau pekerjaan kita dalam empat tahap
 1. Working Directory
 working directory ini adalah sebuah direktori untuk menyimpan kode yang masih dalam tahap pengerjaan, alias belum selesai.
 
-2. Staging Area
+2. Staging Area (git add)
 Tahap dimana perubahan yang sudah dibuat siap untuk di-commit (dibuatkan berita acara).
 Intinya staging area merupakan tempat mengorganisasikan perubahan yang dilakukan buat dimasukkan dalam berita acara.
 
-3. Local Repository
+3. Local Repository (git commit)
 Tahap dimana perubahan udah ditetapkan (fixed), tapi perubahan tersebut cuma terjadi di dalam komputer (belum di-upload ke cloud).
 Misal, kamu menambahkan sebuah function delete dalam file index.js. 
 Pas udah selesai dikerjakan dan siap buat disimpan dalam local repository, jangan lupa menambahkan keterangan perubahannya atau commit message.
 
-4. Remote Repository
+4. Remote Repository (git push)
 Tahap dimana perubahan yang dilakukan udah berada di cloud dan bisa diakses sama developer lain.
 
 Command Git
