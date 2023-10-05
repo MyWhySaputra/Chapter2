@@ -1,0 +1,38 @@
+Git adalah sebuah version control
+
+Git adalah sebuah aplikasi yang berguna untuk mengatur versi dari kode/aplikasi kita.
+
+Git bakal menyimpan folder atau pekerjaan kita dalam empat tahap
+1. Working Directory
+working directory ini adalah sebuah direktori untuk menyimpan kode yang masih dalam tahap pengerjaan, alias belum selesai.
+
+2. Staging Area
+Tahap dimana perubahan yang sudah dibuat siap untuk di-commit (dibuatkan berita acara).
+Intinya staging area merupakan tempat mengorganisasikan perubahan yang dilakukan buat dimasukkan dalam berita acara.
+
+3. Local Repository
+Tahap dimana perubahan udah ditetapkan (fixed), tapi perubahan tersebut cuma terjadi di dalam komputer (belum di-upload ke cloud).
+Misal, kamu menambahkan sebuah function delete dalam file index.js. 
+Pas udah selesai dikerjakan dan siap buat disimpan dalam local repository, jangan lupa menambahkan keterangan perubahannya atau commit message.
+
+4. Remote Repository
+Tahap dimana perubahan yang dilakukan udah berada di cloud dan bisa diakses sama developer lain.
+
+Command Git
+branch
+git branch = untuk melihat list semua branch lokal
+git branch -a = untuk melihat list semua branch lokal dan branch pada remote repository
+git checkout -b (branch_name) = Membuat branch lokal baru dan langsung pindah ke branch baru tersebut
+git checkout (branch_name) pindah ke sebuah branch
+git push origin (branch_name) = upload semua perubahan pada lokal branch ke remote branch
+git branch -m (new_name) = mengubah sebuah local branch
+git branch -d (branch_name) = menghapus local branch
+git push origin :(branch_name) = menghapus remote branch
+logs
+git log --oneline = melihat riwayat commit secara singkat
+git diff = melihat semua changes
+git diff (myfile) = melihat changes pada file tertentu
+cleanup
+git clean -f = menghapus semua file yang tidak ke track
+git clean -df = menghapus semua file dan folder yang tidak ke track
+git checkout -- . = undo semua changes pada local

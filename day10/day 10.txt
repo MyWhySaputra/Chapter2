@@ -21,7 +21,7 @@ Incapsulation = Method atau variable pakai visibility yang private supaya class 
 Encapsulation itu ibaratnya kayak kapsul. Jadi, data kita bisa disembunyikan dengan suatu cara yang namanya visibility. visibility itu ada 3 macam ya, public, private, dan protected.
 
 # = private (tidak bisa dipanggil di sub classnya)
-_ = protected (bisa dipanggil di sub classnya
+_ = protected (bisa dipanggil di sub classnya)
 
 Encapsulation bisa meminimalisir terjadinya bug karena kita secara eksplisit bilang bahwa method/ property ini nggak boleh dipanggil di luar kelas deklarasi.
 
