@@ -6,15 +6,17 @@ class BankAccount {
     deposit(angka) {
         setTimeout(() => {
             try {
-                if (!isNaN(angka) && angka > 0) {
-                    this.saldo += angka;
-                    document.getElementById("balance").textContent = this.saldo;
-                    setTimeout(() => {
-                        alert(`Saldo anda sebesar ${angka} telah berhasil ditambahkan.`);
-                    }, 2000);
-                } else {
-                    throw new Error(alert("Saldo harus berupa angka dan lebih besar dari 0."));
+                if (isNaN(angka)) {
+                    throw new Error(alert("Saldo harus berupa angka"));
                 }
+                if (angka <= 0) {
+                    throw new Error(alert("Saldo harus lebih besar dari 0"));
+                }
+                this.saldo += angka;
+                document.getElementById("balance").textContent = this.saldo;
+                setTimeout(() => {
+                    alert(`Anda deposit sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
+                }, 2000);
             } catch (error) {
                 console.error(error.message);
             }
@@ -24,15 +26,20 @@ class BankAccount {
     withdraw(angka) {
         setTimeout(() => {
             try {
+                if (isNaN(angka)) {
+                    throw new Error(alert("Saldo harus berupa angka"));
+                }
                 if (angka <= 0) {
-                    throw new Error("Invalid withdrawal angka.");
+                    throw new Error(alert("Saldo harus lebih besar dari 0"));
                 }
                 if (angka > this.saldo) {
-                    throw new Error("Insufficient balance for withdrawal.");
+                    throw new Error(alert("Saldo tidak cukup"));
                 }
                 this.saldo -= angka;
                 document.getElementById("balance").textContent = this.saldo;
-                alert(`Withdrawal of $${angka} successful.`);
+                setTimeout(() => {
+                    alert(`Anda withdraw sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
+                }, 2000);
             } catch (error) {
                 console.error(error.message);
             }
@@ -40,9 +47,7 @@ class BankAccount {
     }
 }
 
-// const account = new BankAccount(0);
-
-class Main extends BankAccount {
+class Proses extends BankAccount {
     constructor(saldo) {
         super(saldo);
     }
@@ -56,14 +61,14 @@ class Main extends BankAccount {
     }
 }
 
-const account = new Main(0);
+const account = new Proses(0);
 
 function deposit() {
-    const depositAmount = parseFloat(prompt("Masukkan jumlah saldo yang ingin ditambahkan"));
-    account.deposit(depositAmount);
+    const depositInput = parseFloat(prompt("Masukkan jumlah saldo yang ingin ditambahkan"));
+    account.deposit(depositInput);
 }
 
 function withdraw() {
-    const withdrawAmount = parseFloat(document.getElementById("withdrawAmount").value);
-    account.withdraw(withdrawAmount);
+    const withdrawInput = parseFloat(prompt("Masukkan jumlah saldo yang ingin dikurangi"));
+    account.withdraw(withdrawInput);
 }
