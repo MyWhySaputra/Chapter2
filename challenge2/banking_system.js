@@ -13,7 +13,7 @@ class BankAccount {
                     throw new Error(alert("Saldo harus lebih besar dari 0"));
                 }
                 this.saldo += angka;
-                document.getElementById("balance").textContent = this.saldo;
+                document.getElementById("saldo").textContent = this.saldo;
                 setTimeout(() => {
                     alert(`Anda deposit sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
                 }, 2000);
@@ -36,7 +36,7 @@ class BankAccount {
                     throw new Error(alert("Saldo tidak cukup"));
                 }
                 this.saldo -= angka;
-                document.getElementById("balance").textContent = this.saldo;
+                document.getElementById("saldo").textContent = this.saldo;
                 setTimeout(() => {
                     alert(`Anda withdraw sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
                 }, 2000);

@@ -3,24 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+    <title>Challenge 2</title>
 </head>
 <body>
     <h1>Bank Account Simulation</h1>
 
     <div>
-        <h2>Current Balance: <span id="balance">0</span></h2>
+        <h2>Saldo saat ini : <span id="saldo">0</span></h2>
     </div>
 
     <div>
-        <h3>Deposit</h3>
-        <input type="text" id="depositAmount" placeholder="Enter amount">
         <button onclick="deposit()">Deposit</button>
-    </div>
-
-    <div>
-        <h3>Withdraw</h3>
-        <input type="number" id="withdrawAmount" placeholder="Enter amount">
         <button onclick="withdraw()">Withdraw</button>
     </div>
     <script src="banking_system.js"></script>
