@@ -25,6 +25,7 @@ git branch -a = untuk melihat list semua branch lokal dan branch pada remote rep
 git checkout -b (branch_name) = Membuat branch lokal baru dan langsung pindah ke branch baru tersebut
 git checkout (branch_name) pindah ke sebuah branch
 git push origin (branch_name) = upload semua perubahan pada lokal branch ke remote branch
+git pull origin (branch_name) = download semua perubahan pada remote branch
 git branch -m (new_name) = mengubah sebuah local branch
 git branch -d (branch_name) = menghapus local branch
 git push origin :(branch_name) = menghapus remote branch
@@ -36,3 +37,12 @@ cleanup
 git clean -f = menghapus semua file yang tidak ke track
 git clean -df = menghapus semua file dan folder yang tidak ke track
 git checkout -- . = undo semua changes pada local
+
+cara membuat SSH Key
+
+ssh-keygen -t ed25519 -C "<email_kamu>"
+
+● eval "$(ssh-agent -s)"
+● ssh-add ~/.ssh/id_ed25519
+
+untuk mengeceknya : ssh -T git@github.com
