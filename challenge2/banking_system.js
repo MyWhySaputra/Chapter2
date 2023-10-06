@@ -79,8 +79,8 @@ class TryCatch extends Alert(BankAccount) {
             if (angka <= 0) {
                 throw new Error(alert("Saldo harus lebih besar dari 0"));
             }
-            if (angka > saldo) {
-                throw new Error(alert(`Saldo tidak cukup. Saldo saat ini sebesar ${saldo}`));
+            if (angka > this.saldo) {
+                throw new Error(alert(`Saldo tidak cukup. Saldo saat ini sebesar ${this.saldo}`));
             }
             super.withdraw(angka); // class Alert
         } catch (error) {
