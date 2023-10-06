@@ -11,9 +11,6 @@ class BankAccount {
         setTimeout(() => {
             this.saldo += angka;
             document.getElementById("saldo").textContent = this.saldo;
-            setTimeout(() => {
-                alert(`Anda deposit sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
-            }, 2000);
         }, 2000); // Simulate a 2-second delay
     }
 
@@ -21,14 +18,35 @@ class BankAccount {
         setTimeout(() => {
             this.saldo -= angka;
             document.getElementById("saldo").textContent = this.saldo;
-            setTimeout(() => {
-                alert(`Anda withdraw sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
-            }, 2000);
         }, 2000); // Simulate a 2-second delay
+    }
+
+    #private() {
+        console.log("This is private");
+    }
+
+    _protected() {
+        console.log("This is protected");
     }
 }
 
-class Proses extends BankAccount {
+const Alert = Base => class extends Base {
+    deposit(angka) {
+        super.deposit(angka);
+        setTimeout(() => {
+            alert(`Anda deposit sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
+        }, 4000);
+    }
+
+    withdraw(angka) {
+        super.withdraw(angka);
+        setTimeout(() => {
+            alert(`Anda withdraw sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
+        }, 4000);
+    }
+}
+
+class TryCatch extends Alert(BankAccount) {
     constructor(params) {
         super(params);
     }
@@ -55,8 +73,8 @@ class Proses extends BankAccount {
             if (angka <= 0) {
                 throw new Error(alert("Saldo harus lebih besar dari 0"));
             }
-            if (angka > this.saldo) {
-                throw new Error(alert(`Saldo tidak cukup untuk withdraw sebesar ${angka}`));
+            if (angka > saldo) {
+                throw new Error(alert(`Saldo tidak cukup. Saldo saat ini sebesar ${saldo}`));
             }
             super.withdraw(angka);
         } catch (error) {
@@ -65,12 +83,12 @@ class Proses extends BankAccount {
     }
 }
 
-const account = new Proses({saldo:0});
+const user = new TryCatch({ saldo: 0 });
 
 function deposit() {
     try {
         const depositInput = parseFloat(prompt("Masukkan jumlah saldo yang ingin ditambahkan"));
-        account.deposit(depositInput);
+        user.deposit(depositInput);
     } catch (error) {
         console.error(error.message);
     }
@@ -79,7 +97,7 @@ function deposit() {
 function withdraw() {
     try {
         const withdrawInput = parseFloat(prompt("Masukkan jumlah saldo yang ingin dikurangi"));
-        account.withdraw(withdrawInput);
+        user.withdraw(withdrawInput);
     } catch (error) {
         console.error(error.message);
     }
