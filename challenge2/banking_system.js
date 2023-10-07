@@ -5,54 +5,44 @@ class BankAccount {
             throw new Error("Cannot Access");
         }
         let { saldo } = params;
-        this.saldo = saldo;
+        this._saldo = saldo;
     }
 
     deposit(angka) {
         setTimeout(() => {
-            this.saldo += angka; // rumus
-            document.getElementById("saldo").textContent = this.saldo; // mengirim saldo setelah deposit
+            this._saldo += angka; // rumus
+            document.getElementById("saldo").textContent = this._saldo; // mengirim saldo setelah deposit
         }, 2000); // setTimeout 2 detik
     }
 
     withdraw(angka) {
         setTimeout(() => {
-            this.saldo -= angka; // rumus
-            document.getElementById("saldo").textContent = this.saldo; // mengirim saldo setelah withdraw
+            this._saldo -= angka; // rumus
+            document.getElementById("saldo").textContent = this._saldo; // mengirim saldo setelah withdraw
         }, 2000); // setTimeout 2 detik
-    }
-
-    // implementasi private
-    #private() {
-        console.log("This is private");
-    }
-
-    // implementasi protected
-    _protected() {
-        console.log("This is protected");
     }
 }
 
 // implementasi Polymorphism
 // class Alert
-const Alert = Base => class extends Base {
+const ImplAlert = Base => class extends Base {
     deposit(angka) {
         super.deposit(angka); // class BankAccount
         setTimeout(() => {
-            alert(`Anda deposit sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
+            alert(`Anda deposit sebesar ${angka}, Saldo anda saat ini sebesar ${this._saldo}`);
         }, 4000); // setTimeout 4 detik
     }
 
     withdraw(angka) {
         super.withdraw(angka); // class BankAccount
         setTimeout(() => {
-            alert(`Anda withdraw sebesar ${angka}, Saldo anda saat ini sebesar ${this.saldo}`);
+            alert(`Anda withdraw sebesar ${angka}, Saldo anda saat ini sebesar ${this._saldo}`);
         }, 4000); // setTimeout 4 detik
     }
 }
 
 // Implementasi Polymorphism & Inheritance
-class TryCatch extends Alert(BankAccount) {
+class ImplPoly extends ImplAlert(BankAccount) {
     constructor(params) {
         super(params); // class BankAccount
     }
@@ -60,12 +50,13 @@ class TryCatch extends Alert(BankAccount) {
     deposit(angka) {
         try {
             if (isNaN(angka)) {
-                throw new Error(alert("Saldo harus berupa angka"));
+                throw new Error(alert("Input harus berupa angka"));
             }
             if (angka <= 0) {
-                throw new Error(alert("Saldo harus lebih besar dari 0"));
+                throw new Error(alert("Input harus lebih besar dari 0"));
             }
             super.deposit(angka); // class Alert
+            return
         } catch (error) {
             console.error(error.message);
         }
@@ -74,22 +65,23 @@ class TryCatch extends Alert(BankAccount) {
     withdraw(angka) {
         try {
             if (isNaN(angka)) {
-                throw new Error(alert("Saldo harus berupa angka"));
+                throw new Error(alert("Input harus berupa angka"));
             }
             if (angka <= 0) {
-                throw new Error(alert("Saldo harus lebih besar dari 0"));
+                throw new Error(alert("Input harus lebih besar dari 0"));
             }
-            if (angka > this.saldo) {
-                throw new Error(alert(`Saldo tidak cukup. Saldo saat ini sebesar ${this.saldo}`));
+            if (angka > this._saldo) {
+                throw new Error(alert(`Saldo tidak cukup. Saldo saat ini sebesar ${this._saldo}`));
             }
             super.withdraw(angka); // class Alert
+            return
         } catch (error) {
             console.error(error.message);
         }
     }
 }
 
-const user = new TryCatch({ saldo: 0 }); // deklarasi class TryCatch dengan parameter { saldo: 0 }
+const user = new ImplPoly({ saldo: 0 }); // deklarasi class TryCatch dengan parameter { saldo: 0 }
 
 function deposit() {
     try {
